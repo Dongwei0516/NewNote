@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="21"
+    density="xxhdpi"
+    format="7"
+    timestamp="122193598531929"
+    token="3274570956751104955" >
+
+    <task
+        name="javac"
+        duration="0" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <artifact
+        location="/Users/dongwei/AndroidStudioProjects/newnote/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
+
+    <build timestamp="122193598531929" >
+        <artifact
+            location="/Users/dongwei/AndroidStudioProjects/newnote/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

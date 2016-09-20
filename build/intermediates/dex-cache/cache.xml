@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="681e470b449f934a870475ade3e7d32d09920d58">
+        <dex dex="/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6e59ad3c8297a6c8697579069e135aa08513f727/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dongwei/Downloads/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-18.0.0_b3d1d65a0d1496a3b798cd75753f18284aae9305/classes.dex" />
+    </item>
+    <item
+        jar="/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="5679d175f227058edb977b0ffee24ca0f719bcce">
+        <dex dex="/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_94bb7dede8e301e33cfde11f362b19023b02b463/classes.dex" />
+    </item>
+
+</items>

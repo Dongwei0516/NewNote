@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="introduce">  使用说明：这是一个具有加密和排序功能的记事本。\n
+        1.加密：所有加密文件的密码统一，新建文件密码默认为空，须自行进行修改。\n
+        2.排序:有名称和时间两种排序方法，名称为标题首字母，时间为文件的创建时间。\n
+        3.\n
+        4.\n
+        </string>
+    <string name="app_name">newnote</string>
+
+</resources>
