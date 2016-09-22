@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.example.newnote.R;
 
-public class showpage extends Activity {
+public class Showpage extends Activity {
 
 	private TextView titleText;
 	private TextView contentText;

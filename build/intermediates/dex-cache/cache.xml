@@ -10,14 +10,6 @@
         <dex dex="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-18.0.0_b3d1d65a0d1496a3b798cd75753f18284aae9305/classes.dex" />
     </item>
     <item
-        jar="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5e38bf06fc51ba4bc88ad124d63f8671530c2dd6">
-        <dex dex="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6a9c1c4f3e5452cceb74ef883708c5921501d2c8/classes.dex" />
-    </item>
-    <item
         is-multidex="true"
         jar="/Users/dongwei/Downloads/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
         jumboMode="true"
@@ -27,12 +19,20 @@
         <dex dex="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-18.0.0_b3d1d65a0d1496a3b798cd75753f18284aae9305/classes.dex" />
     </item>
     <item
+        jar="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5e38bf06fc51ba4bc88ad124d63f8671530c2dd6">
+        <dex dex="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6a9c1c4f3e5452cceb74ef883708c5921501d2c8/classes.dex" />
+    </item>
+    <item
         is-multidex="true"
         jar="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="a626e395bca7b1b44b0af66fe6e40b3c8d830964">
+        sha1="f09599e01c180ff088a9588a2b999bac166e23a0">
         <dex dex="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6a9c1c4f3e5452cceb74ef883708c5921501d2c8/classes.dex" />
     </item>
     <item
@@ -49,7 +49,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="d30c23e61f2010c99c82f46490f6b74332a4d6f9">
+        sha1="9e12607bfc8ae76e39a974d8e84f5d021a901319">
         <dex dex="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6385aec98f8b756030637e0bf09391589acdfa43/classes.dex" />
     </item>
 

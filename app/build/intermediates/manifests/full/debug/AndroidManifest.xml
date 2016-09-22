@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.newnote.Notepad"
+            android:name="com.example.newnote.NotepadActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,19 +23,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.newnote.InputPage"
+            android:name="com.example.newnote.InputPageActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.example.newnote.Settings"
+            android:name="com.example.newnote.SettingActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.example.newnote.introduce"
+            android:name="com.example.newnote.IntroduceActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.example.newnote.showpage"
+            android:name="com.example.newnote.Showpage"
             android:label="@string/app_name" >
         </activity>
     </application>

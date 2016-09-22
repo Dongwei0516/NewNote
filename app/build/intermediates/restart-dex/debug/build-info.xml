@@ -4,19 +4,19 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="202175454081215"
+    timestamp="223973348179332"
     token="3136387021029787308"
-    verifier="CLASS_ADDED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="372" />
+        duration="243" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="78" />
+        duration="66" />
     <task
         name="verifier"
         duration="9" />
@@ -26,15 +26,15 @@
         type="DEX" />
 
     <build
-        timestamp="197115925496170"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="220831094277211"
+        verifier="MANIFEST_FILE_CHANGE" >
         <artifact
             location="/Users/dongwei/Downloads/NewNote-master/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="202175454081215"
-        verifier="CLASS_ADDED" >
+        timestamp="223973348179332"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
             type="DEX" />
