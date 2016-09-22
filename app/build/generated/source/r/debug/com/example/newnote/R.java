@@ -58,8 +58,44 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060000;
         public static final int app_name=0x7f060001;
-        public static final int hello_world=0x7f060002;
-        public static final int introduce=0x7f060003;
+        public static final int asc=0x7f060002;
+        public static final int cancel=0x7f060003;
+        public static final int confirm=0x7f060004;
+        public static final int date=0x7f060005;
+        public static final int delete=0x7f060006;
+        public static final int desc=0x7f060007;
+        public static final int edit=0x7f060008;
+        public static final int empty=0x7f060009;
+        public static final int encrypt=0x7f06000a;
+        public static final int error=0x7f06000b;
+        public static final int exit=0x7f06000c;
+        public static final int exit_confirm=0x7f06000d;
+        public static final int hello_world=0x7f06000e;
+        public static final int inputpassword=0x7f06000f;
+        public static final int introduce=0x7f060010;
+        public static final int introduce1=0x7f060011;
+        public static final int introduce_name=0x7f060012;
+        public static final int mynotepage=0x7f060013;
+        public static final int name=0x7f060014;
+        public static final int newnote=0x7f060015;
+        public static final int neworder=0x7f060016;
+        public static final int newpassword=0x7f060017;
+        public static final int order1=0x7f060018;
+        public static final int order2=0x7f060019;
+        public static final int password=0x7f06001a;
+        public static final int password_change=0x7f06001b;
+        public static final int password_error1=0x7f06001c;
+        public static final int password_error2=0x7f06001d;
+        public static final int password_error3=0x7f06001e;
+        public static final int pwd=0x7f06001f;
+        public static final int save=0x7f060020;
+        public static final int save_confirm=0x7f060021;
+        public static final int success=0x7f060022;
+        public static final int text_list=0x7f060023;
+        public static final int textview1=0x7f060024;
+        public static final int title1=0x7f060025;
+        public static final int title2=0x7f060026;
+        public static final int wrongpassword=0x7f060027;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

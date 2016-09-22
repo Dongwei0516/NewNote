@@ -38,7 +38,7 @@ public class ToDoDB extends SQLiteOpenHelper {
 		db.execSQL(sql2);
 		onCreate(db);
 	}
-	
+
 	public Cursor select(String item, String sort){
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.query("tbl_content", null, null, null, null, null, item + " " + sort);
@@ -80,7 +80,7 @@ public class ToDoDB extends SQLiteOpenHelper {
 		String str = df.format(date);
 		return str;
 	}
-	
+
 	public Cursor getSettings(){
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor cursor = db.query("tbl_settings", null, null, null, null, null, "_id");

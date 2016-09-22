@@ -1,26 +1,26 @@
 [
     {
-        "merged": "/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/res/merged/debug/layout/showpage.xml",
-        "source": "/Users/dongwei/AndroidStudioProjects/newnote/app/src/main/res/layout/showpage.xml"
+        "merged": "/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/res/merged/debug/layout/listpage.xml",
+        "source": "/Users/dongwei/Downloads/NewNote-master/app/src/main/res/layout/listpage.xml"
     },
     {
-        "merged": "/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/res/merged/debug/layout/introduce.xml",
-        "source": "/Users/dongwei/AndroidStudioProjects/newnote/app/src/main/res/layout/introduce.xml"
+        "merged": "/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/res/merged/debug/layout/introduce.xml",
+        "source": "/Users/dongwei/Downloads/NewNote-master/app/src/main/res/layout/introduce.xml"
     },
     {
-        "merged": "/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/res/merged/debug/layout/inputpage.xml",
-        "source": "/Users/dongwei/AndroidStudioProjects/newnote/app/src/main/res/layout/inputpage.xml"
+        "merged": "/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/res/merged/debug/layout/passwordpage.xml",
+        "source": "/Users/dongwei/Downloads/NewNote-master/app/src/main/res/layout/passwordpage.xml"
     },
     {
-        "merged": "/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/res/merged/debug/layout/passwordpage.xml",
-        "source": "/Users/dongwei/AndroidStudioProjects/newnote/app/src/main/res/layout/passwordpage.xml"
+        "merged": "/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/res/merged/debug/layout/main.xml",
+        "source": "/Users/dongwei/Downloads/NewNote-master/app/src/main/res/layout/main.xml"
     },
     {
-        "merged": "/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/res/merged/debug/layout/main.xml",
-        "source": "/Users/dongwei/AndroidStudioProjects/newnote/app/src/main/res/layout/main.xml"
+        "merged": "/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/res/merged/debug/layout/showpage.xml",
+        "source": "/Users/dongwei/Downloads/NewNote-master/app/src/main/res/layout/showpage.xml"
     },
     {
-        "merged": "/Users/dongwei/AndroidStudioProjects/newnote/app/build/intermediates/res/merged/debug/layout/listpage.xml",
-        "source": "/Users/dongwei/AndroidStudioProjects/newnote/app/src/main/res/layout/listpage.xml"
+        "merged": "/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/res/merged/debug/layout/inputpage.xml",
+        "source": "/Users/dongwei/Downloads/NewNote-master/app/src/main/res/layout/inputpage.xml"
     }
 ]

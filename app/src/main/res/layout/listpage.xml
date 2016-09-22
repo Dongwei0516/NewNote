@@ -9,7 +9,7 @@
         android:layout_height="26dp"
         android:background="#d2691e"
         android:gravity="center|left"
-        android:text="文本列表"
+        android:text="@string/text_list"
         android:textColor="#ffffff" />
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="请新建文本！"
+        android:text="@string/textview1"
         android:textSize="16sp" />
 
     <AutoCompleteTextView

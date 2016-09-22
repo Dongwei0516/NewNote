@@ -8,7 +8,7 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:text="产品说明"
+        android:text="@string/introduce_name"
         android:layout_height="26dp"
         android:background="#d2691e"/>
 

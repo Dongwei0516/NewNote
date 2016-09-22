@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,9 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Notepad extends Activity {
 	public static ToDoDB myToDoDB;
@@ -33,9 +37,9 @@ public class Notepad extends Activity {
 	private String title;
 	private String content;
 	private String use_pw;
-	private static String strPW;
-	private static String strOrderItem;
-	private static String strOrderSort;
+	private String strPW;
+	private String strOrderItem;
+	private String strOrderSort;
 	protected final static int MENU_ADD = Menu.FIRST;
 	protected final static int MENU_SET = Menu.FIRST + 1;
 	protected final static int MENU_ABOUT = Menu.FIRST + 2;
@@ -43,9 +47,9 @@ public class Notepad extends Activity {
 
 	
 	 String[] books = new String[]{
-	            "你好", "ShenZhen", "ShangHai","BeiJing","HaiNan","Shangdong","Shantou"
+	            "ShenZhen", "ShangHai","BeiJing"
 	 };
-	
+
 	
 	Class<?> mActivities[] = { InputPage.class, Settings.class ,showpage.class};
 
@@ -69,7 +73,7 @@ public class Notepad extends Activity {
 		// 获得DataBase里的数据
 		setCursor = myToDoDB.getSettings();
 		initSettings(this);
-		emptyInfo();
+
 
 		// 将myListView添加OnItemClickListener
 		myListView
@@ -122,19 +126,34 @@ public class Notepad extends Activity {
 				});
 	}
 
+
+	@Override
+	public void onResume(){
+		super.onResume();
+		refresh();
+	}
+
+	public void refresh() {
+		onCreate(null);
+	}
+
+
+
+    @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// 添加MENU
-		menu.add(Menu.NONE, MENU_ADD, 0, "新建文本").setIcon(
+		menu.add(Menu.NONE, MENU_ADD, 0, R.string.newnote).setIcon(
 				android.R.drawable.ic_menu_add);
-		menu.add(Menu.NONE, MENU_SET, 0, "加密与排序").setIcon(
+		menu.add(Menu.NONE, MENU_SET, 0, R.string.title1).setIcon(
 				android.R.drawable.ic_menu_preferences);
-		menu.add(Menu.NONE, MENU_ABOUT, 0, "关于产品").setIcon(
+		menu.add(Menu.NONE, MENU_ABOUT, 0, R.string.title2).setIcon(
 				android.R.drawable.ic_menu_info_details);
-		menu.add(Menu.NONE, MENU_EXIT, 0, "退出").setIcon(
+		menu.add(Menu.NONE, MENU_EXIT, 0, R.string.exit).setIcon(
 				android.R.drawable.ic_menu_close_clear_cancel);
 		return super.onCreateOptionsMenu(menu);
 	}
 
+    @Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
 		switch (item.getItemId()) {
@@ -159,9 +178,9 @@ public class Notepad extends Activity {
 
 	private void verifyDialog(final int op) {
 		new AlertDialog.Builder(this)
-				.setTitle("请输入密码")
+				.setTitle(R.string.inputpassword)
 				.setView(buttonEditText)
-				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+				.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialoginterface, int i) {
 						buttonTextView.setText(buttonEditText.getText()
 								.toString());
@@ -175,12 +194,12 @@ public class Notepad extends Activity {
 								break;
 							}
 						} else {
-							Toast.makeText(Notepad.this, "密码错误！",
+							Toast.makeText(Notepad.this, R.string.wrongpassword,
 									Toast.LENGTH_LONG).show();
 						}
 					}
 				})
-				.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+				.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialoginterface, int i) {
 					}
 				}).show();
@@ -188,8 +207,8 @@ public class Notepad extends Activity {
 	
 
 	private void deleteDialog() {
-		new AlertDialog.Builder(this).setMessage("编辑日记")
-				.setPositiveButton("删除", new DialogInterface.OnClickListener() {
+		new AlertDialog.Builder(this).setMessage(R.string.edit)
+				.setPositiveButton(R.string.delete, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialoginterface, int i) {
 						if (id == 0)
 							return;
@@ -200,7 +219,7 @@ public class Notepad extends Activity {
 						id = 0;
 						emptyInfo();
 					}
-				}).setNegativeButton("修改", new DialogInterface.OnClickListener() {
+				}).setNegativeButton(R.string.edit, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialoginterface, int i) {
 						onListItemClick(0, "edit");
 					}
@@ -209,8 +228,8 @@ public class Notepad extends Activity {
 
 	private void aboutOptionsDialog() {
 		new AlertDialog.Builder(this)
-		.setMessage("使用说明")
-		.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+		.setMessage(R.string.introduce_name)
+		.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialoginterface, int i) {
 						Intent intent=null;
 						intent = new Intent(Notepad.this,
@@ -222,24 +241,22 @@ public class Notepad extends Activity {
 
 	private void exitOptionsDialog() {
 		new AlertDialog.Builder(this)
-				.setTitle(" 退出")
-				.setMessage("你确定要退出吗")
-				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+				.setTitle(R.string.exit)
+				.setMessage(R.string.exit_confirm)
+				.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialoginterface, int i) {
 						System.exit(0);
 					}
 				})
-				.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+				.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialoginterface, int i) {
 					}
 				}).show();
 	}
 
 	void onListItemClick(int index, String op) {
-		// new一个Intent对象，并指定要启动的class
 		Intent intent = null;
 		intent = new Intent(this, mActivities[index]);
-		// new一个Bundle对象，并将要传递的数据传入
 		Bundle bundle = new Bundle();
 		bundle.putInt("id", id);
 		bundle.putString("title", title);
@@ -249,15 +266,11 @@ public class Notepad extends Activity {
 		bundle.putString("strPW", strPW);
 		bundle.putString("strOrderItem", strOrderItem);
 		bundle.putString("strOrderSort", strOrderSort);
-		// 将Bundle对象assign给Intent
 		intent.putExtras(bundle);
-		// 调用一个新的Activity
 		this.startActivity(intent);
-		// 关闭原来的Activity
-		this.finish();
             	}
 
-	public static void initSettings(Context context) {
+	public void initSettings(Context context) {
 		setCursor.moveToFirst();
 		strPW = setCursor.getString(1);
 		setCursor.moveToNext();
@@ -265,8 +278,6 @@ public class Notepad extends Activity {
 		setCursor.moveToNext();
 		strOrderSort = setCursor.getString(1);
 
-		myCursor = myToDoDB.select(strOrderItem, strOrderSort);
-		// new SimpleCursorAdapter并将myCursor传入
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(context,
 				R.layout.main, myCursor, new String[] { "use_pw", "title",
 						"upt_date" }, new int[] { R.id.listTextView3,
@@ -282,8 +293,5 @@ public class Notepad extends Activity {
 		}
 	}
 
-	protected void onDestroy() {
-		System.exit(0);
-		super.onDestroy();
-	}
+
 }

@@ -50,6 +50,7 @@ public class InputPage extends Activity {
 				}
 		button1 = (Button) findViewById(R.id.save);
 		button1.setOnClickListener(new OnClickListener() {
+
 			@Override
 			public void onClick(View arg0) {
 				saveDialog();
@@ -60,9 +61,9 @@ public class InputPage extends Activity {
 
 	private void saveDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("保存");
-		builder.setMessage("确认要保存吗？");
-		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+		builder.setTitle(R.string.save);
+		builder.setMessage(R.string.save_confirm);
+		builder.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialoginterface, int i) {
 				saveTodo();
 				Intent intent=null;
@@ -70,7 +71,7 @@ public class InputPage extends Activity {
 						Notepad.class);
 				startActivity(intent);
 			}
-		}).setNegativeButton("撤销", new DialogInterface.OnClickListener() {
+		}).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialoginterface, int i) {
 			}
 		}).show();
@@ -78,11 +79,11 @@ public class InputPage extends Activity {
 
 	private void saveTodo() {
 		if (editText1.getText().toString().equals("")) {
-			editText1.setText("无标题");
+			editText1.setText(R.string.empty);
 		}
 		title = editText1.getText().toString();
 		if (editText2.getText().toString().equals("")) {
-			editText2.setText("无内容");
+			editText2.setText(R.string.empty);
 		}
 		content = editText2.getText().toString();
 
@@ -94,10 +95,9 @@ public class InputPage extends Activity {
 		} else {
 			Notepad.myToDoDB.insert(title, content, use_pw);
 		}
-		Notepad.myCursor.requery();
 		Notepad.myListView.invalidateViews();
-		Notepad.emptyInfo();
-		Toast.makeText(InputPage.this, "保存成功！", Toast.LENGTH_LONG).show();
+		//Notepad.emptyInfo();
+		Toast.makeText(InputPage.this, R.string.success, Toast.LENGTH_LONG).show();
 	}
 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -112,9 +112,9 @@ public class InputPage extends Activity {
 				InputPage.this.finish();
 			} else {
 				new AlertDialog.Builder(this)
-						.setTitle("保存")
-						.setMessage("内容已修改，要保存吗？")
-						.setPositiveButton("保存",
+						.setTitle(R.string.save)
+						.setMessage(R.string.save_confirm)
+						.setPositiveButton(R.string.save,
 								new DialogInterface.OnClickListener() {
 									public void onClick(
 											DialogInterface dialoginterface,
@@ -124,10 +124,9 @@ public class InputPage extends Activity {
 										intent = new Intent(InputPage.this,
 												Notepad.class);
 										startActivity(intent);
-										InputPage.this.finish();
 									}
 								})
-						.setNegativeButton("放弃",
+						.setNegativeButton(R.string.cancel,
 								new DialogInterface.OnClickListener() {
 									public void onClick(
 											DialogInterface dialoginterface,

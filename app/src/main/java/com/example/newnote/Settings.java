@@ -26,10 +26,10 @@ public class Settings extends Activity {
 	private String strOrderSort;
 	
 	@Override
-	public void onCreate(Bundle savedInstanceState){
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.passwordpage);
-		
+
 		editText1 = (EditText) findViewById(R.id.formerpassword);
 		editText2 = (EditText) findViewById(R.id.newpasssword);
 		editText3 = (EditText) findViewById(R.id.againpassword);
@@ -39,64 +39,65 @@ public class Settings extends Activity {
 		radioButton2 = (RadioButton) findViewById(R.id.radioButton2);
 		radioButton3 = (RadioButton) findViewById(R.id.radioButton3);
 		radioButton4 = (RadioButton) findViewById(R.id.radioButton4);
-		
-		// 取得Intent中的Bundle对象
-		Bundle bundle = this.getIntent().getExtras();
-		strPW = bundle.getString("strPW");
-		strOrderItem = bundle.getString("strOrderItem");
-		strOrderSort = bundle.getString("strOrderSort");
-		
-		if(strOrderItem.equals("upt_date")){
-			radioButton2.setChecked(true);
-		}else{
-			radioButton1.setChecked(true);
-		}
-		if(strOrderSort.equals("PositiveSequence")){
-			radioButton4.setChecked(true);
-		}else{
-			radioButton3.setChecked(true);
-		}
-		
-		button1 = (Button) findViewById(R.id.confirm);
-		button1.setOnClickListener(
-	        new View.OnClickListener() {
-				public void onClick(View arg0) {
-					submit();
-				}
-			}
-	    );
-		
-		radioGroup1.setOnCheckedChangeListener(
-			new RadioGroup.OnCheckedChangeListener() {
-				public void onCheckedChanged(RadioGroup group, int checkedId) {
-					if(checkedId==radioButton2.getId()){
-						strOrderItem = "upt_date";
-						radioButton2.setChecked(true);
-					}else{
-						strOrderItem = "title";
-						radioButton1.setChecked(true);
-					}
-					Notepad.myToDoDB.setSettings(2, strOrderItem);
-				}
-			}
-		);
-		
-		radioGroup2.setOnCheckedChangeListener(
-			new RadioGroup.OnCheckedChangeListener() {
-				public void onCheckedChanged(RadioGroup group, int checkedId) {
-					if(checkedId==radioButton4.getId()){
-						strOrderSort = "PositiveSequence";
-						radioButton4.setChecked(true);
-					}else{
-						strOrderSort = "ReverseOrder";
-						radioButton3.setChecked(true);
-					}
-					Notepad.myToDoDB.setSettings(3, strOrderSort);
-				}
-			}
-		);
+
+
+
+	Bundle bundle = this.getIntent().getExtras();
+	strPW = bundle.getString("strPW");
+	strOrderItem = bundle.getString("strOrderItem");
+	strOrderSort = bundle.getString("strOrderSort");
+
+	if(strOrderItem.equals("upt_date")){
+		radioButton2.setChecked(true);
+	}else{
+		radioButton1.setChecked(true);
 	}
-	
+	if(strOrderSort.equals("PositiveSequence")){
+		radioButton4.setChecked(true);
+	}else{
+		radioButton3.setChecked(true);
+	}
+
+	button1 = (Button) findViewById(R.id.confirm);
+	button1.setOnClickListener(
+			new View.OnClickListener() {
+		public void onClick(View arg0) {
+			submit();
+		}
+	}
+	);
+
+	radioGroup1.setOnCheckedChangeListener(
+			new RadioGroup.OnCheckedChangeListener() {
+		public void onCheckedChanged(RadioGroup group, int checkedId) {
+			if(checkedId==radioButton2.getId()){
+				strOrderItem = "upt_date";
+				radioButton2.setChecked(true);
+			}else{
+				strOrderItem = "title";
+				radioButton1.setChecked(true);
+			}
+			Notepad.myToDoDB.setSettings(2, strOrderItem);
+		}
+	}
+	);
+
+	radioGroup2.setOnCheckedChangeListener(
+			new RadioGroup.OnCheckedChangeListener() {
+		public void onCheckedChanged(RadioGroup group, int checkedId) {
+			if(checkedId==radioButton4.getId()){
+				strOrderSort = "PositiveSequence";
+				radioButton4.setChecked(true);
+			}else{
+				strOrderSort = "ReverseOrder";
+				radioButton3.setChecked(true);
+			}
+			Notepad.myToDoDB.setSettings(3, strOrderSort);
+		}
+	}
+	);
+}
+
 	private void submit(){
 		String oldPW = editText1.getText().toString();
 		String newPW = editText2.getText().toString();
@@ -104,29 +105,29 @@ public class Settings extends Activity {
 		
 		if(oldPW.equals(strPW)){
 			if(oldPW.equals(newPW)){
-				strDialog("错误", "新密码与原密码不能相同，请重新输入！");
+				strDialog(R.string.error, R.string.password_error1);
 			}else{
 				if(newPW.equals(verPW)){
 					Notepad.myToDoDB.setSettings(1, newPW);
-					strDialog("正确", "密码已修改！");
+					strDialog(R.string.confirm, R.string.password_change);
 					editText1.setText("");
 					editText2.setText("");
 					editText3.setText("");
 					strPW = newPW;
 				}else{
-					strDialog("错误", "新密码两次输入不一致，请重新输入！");
+					strDialog(R.string.error, R.string.password_error2);
 				}
 			}
 		}else{
-			strDialog("错误", "原密码输入错误，请重新输入！");
+			strDialog(R.string.error, R.string.password_error3);
 		}
 	}
 	
-	private void strDialog(String title, String msg){
+	private void strDialog(int title, int msg){
     	new AlertDialog.Builder(this)
     	.setTitle(title)
     	.setMessage(msg)
-    	.setPositiveButton("确认",
+    	.setPositiveButton(R.string.confirm,
     		new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialoginterface, int i) {
 				}
@@ -134,10 +135,5 @@ public class Settings extends Activity {
     	)
 		.show();
     }
-	
-	protected void onDestroy(){
-		Notepad.setCursor.requery();
-		Notepad.initSettings(this);
-		super.onDestroy();
-    }
+
 }
