@@ -1,4 +1,4 @@
-#Thu Sep 22 17:52:49 CST 2016
+#Mon Sep 26 11:04:39 CST 2016
 base.0=/Users/dongwei/Downloads/NewNote-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6385aec98f8b756030637e0bf09391589acdfa43
 renamed.1=classes.dex
 renamed.0=classes2.dex

@@ -67,6 +67,7 @@ public class InputPageActivity extends Activity {
 				saveDialog();
 	    	}
 		});*/
+		myToDoDB = new ToDoDB(this);
 
 	}
 
