@@ -16,7 +16,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class InputPageActivity extends Activity {
+
+public class InputpageActivity extends Activity {
 	private EditText editText1;
 	private EditText editText2;
 	private CheckBox checkBox1;
@@ -53,21 +54,15 @@ public class InputPageActivity extends Activity {
 					}
 				}
 		button1 = (Button) findViewById(R.id.save);
-		button1 = (Button) findViewById(R.id.save);
 		button1.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				saveDialog();
 			}
 		});
-		/*button1.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View arg0) {
-				saveDialog();
-	    	}
-		});*/
 		myToDoDB = new ToDoDB(this);
+		myListView =new ListView(this);
 
 	}
 
@@ -79,9 +74,9 @@ public class InputPageActivity extends Activity {
 			public void onClick(DialogInterface dialoginterface, int i) {
 				saveTodo();
 				Intent intent=null;
-				intent = new Intent(InputPageActivity.this,
+				intent = new Intent(InputpageActivity.this,
 						NotepadActivity.class);
-				finish();
+				startActivity(intent);
 			}
 		}).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialoginterface, int i) {
@@ -111,8 +106,8 @@ public class InputPageActivity extends Activity {
 			myToDoDB.insert(title, content, use_pw);
 		}
 		myListView = (ListView) findViewById(R.id.myListView);
-		//Notepad.emptyInfo();
-		Toast.makeText(InputPageActivity.this, R.string.success, Toast.LENGTH_LONG).show();
+//		myListView.invalidateViews();
+		Toast.makeText(InputpageActivity.this, R.string.success, Toast.LENGTH_LONG).show();
 	}
 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -124,7 +119,7 @@ public class InputPageActivity extends Activity {
 			if (title.equals(editText1.getText().toString())
 					&& content.equals(editText2.getText().toString())
 					&& use_pw.equals(strPW)) {
-				InputPageActivity.this.finish();
+				InputpageActivity.this.finish();
 			} else {
 				new AlertDialog.Builder(this)
 						.setTitle(R.string.save)
@@ -136,9 +131,10 @@ public class InputPageActivity extends Activity {
 											int i) {
 										saveTodo();
 										Intent intent=null;
-										intent = new Intent(InputPageActivity.this,
+										intent = new Intent(InputpageActivity.this,
 												NotepadActivity.class);
-										finish();
+										startActivity(intent);
+										InputpageActivity.this.finish();
 									}
 								})
 						.setNegativeButton(R.string.cancel,
@@ -146,7 +142,7 @@ public class InputPageActivity extends Activity {
 									public void onClick(
 											DialogInterface dialoginterface,
 											int i) {
-										InputPageActivity.this.finish();
+										InputpageActivity.this.finish();
 									}
 								}).show();
 			}

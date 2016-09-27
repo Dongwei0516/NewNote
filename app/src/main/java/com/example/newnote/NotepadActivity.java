@@ -41,7 +41,7 @@ public class NotepadActivity extends Activity {
 	protected final static int MENU_ABOUT = Menu.FIRST + 2;
 	protected final static int MENU_EXIT = Menu.FIRST + 3;
 
-	private ArrayAdapter adapter;
+	//private ArrayAdapter adapter;
 
 
 	 String[] books = new String[]{
@@ -49,7 +49,7 @@ public class NotepadActivity extends Activity {
 	 };
 
 	
-	Class<?> mActivities[] = { InputPageActivity.class, SettingActivity.class ,Showpage.class};
+	Class<?> mActivities[] = { InputpageActivity.class, SettingActivity.class ,ShowpageActivity.class};
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +71,7 @@ public class NotepadActivity extends Activity {
 		// 获得DataBase里的数据
 		setCursor = myToDoDB.getSettings();
 		initSettings(this);
+		emptyInfo();
 
 
 		// 将myListView添加OnItemClickListener
@@ -125,7 +126,7 @@ public class NotepadActivity extends Activity {
 	}
 
 
-	@Override
+/*	@Override
 	public void onResume(){
 		super.onResume();
 		refresh();
@@ -136,7 +137,7 @@ public class NotepadActivity extends Activity {
 		myListView.setAdapter(adapter);
 	}
 
-
+*/
     @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// 添加MENU
@@ -264,7 +265,9 @@ public class NotepadActivity extends Activity {
 		bundle.putString("strPW", strPW);
 		bundle.putString("strOrderItem", strOrderItem);
 		bundle.putString("strOrderSort", strOrderSort);
+
 		intent.putExtras(bundle);
+
 		this.startActivity(intent);
             	}
 
@@ -275,6 +278,8 @@ public class NotepadActivity extends Activity {
 		strOrderItem = setCursor.getString(1);
 		setCursor.moveToNext();
 		strOrderSort = setCursor.getString(1);
+
+		myCursor = myToDoDB.select(strOrderItem,strOrderSort);
 
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(context,
 				R.layout.main, myCursor, new String[] { "use_pw", "title",

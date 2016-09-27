@@ -41,7 +41,7 @@ public class ToDoDB extends SQLiteOpenHelper {
 
 	public Cursor select(String item, String sort){
 		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor cursor = db.query("tbl_content", null, null, null, null, null, item + " " + sort);
+		Cursor cursor = db.query("tbl_content", null, null, null, null, null, "content");
 		return cursor;
 	}
 	

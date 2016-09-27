@@ -3,12 +3,9 @@ package com.example.newnote;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.widget.TextView;
 
-import com.example.newnote.R;
-
-public class Showpage extends Activity {
+public class ShowpageActivity extends Activity {
 
 	private TextView titleText;
 	private TextView contentText;
@@ -38,3 +35,4 @@ public class Showpage extends Activity {
 	}
 
 }
+

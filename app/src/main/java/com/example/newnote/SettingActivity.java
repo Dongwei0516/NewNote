@@ -2,7 +2,9 @@ package com.example.newnote;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,7 +43,7 @@ public class SettingActivity extends Activity {
 		radioButton3 = (RadioButton) findViewById(R.id.radioButton3);
 		radioButton4 = (RadioButton) findViewById(R.id.radioButton4);
 
-
+		myToDoDB = new ToDoDB(this);
 
 	Bundle bundle = this.getIntent().getExtras();
 	strPW = bundle.getString("strPW");
@@ -78,7 +80,12 @@ public class SettingActivity extends Activity {
 				strOrderItem = "title";
 				radioButton1.setChecked(true);
 			}
-			myToDoDB.setSettings(2, strOrderItem);
+			//myToDoDB.setSettings(2, strOrderItem);
+
+			SharedPreferences sharedPreferences=getSharedPreferences("setting", Context.MODE_PRIVATE);
+			SharedPreferences.Editor editor = sharedPreferences.edit();
+			editor.putString("orderItem","");
+			editor.commit();
 		}
 	}
 	);
@@ -93,7 +100,12 @@ public class SettingActivity extends Activity {
 				strOrderSort = "ReverseOrder";
 				radioButton3.setChecked(true);
 			}
-			myToDoDB.setSettings(3, strOrderSort);
+			//myToDoDB.setSettings(3, strOrderSort);
+			SharedPreferences sharedPreferences=getSharedPreferences("setting", Context.MODE_PRIVATE);
+			//String a = sharedPreferences.getString("", "d");
+			SharedPreferences.Editor editor = sharedPreferences.edit();
+			editor.putString("orderSort","");
+			editor.commit();
 		}
 	}
 	);
@@ -109,7 +121,10 @@ public class SettingActivity extends Activity {
 				strDialog(R.string.error, R.string.password_error1);
 			}else{
 				if(newPW.equals(verPW)){
-					myToDoDB.setSettings(1, newPW);
+					SharedPreferences sharedPreferences=getSharedPreferences("setting", Context.MODE_PRIVATE);
+					SharedPreferences.Editor editor = sharedPreferences.edit();
+					editor.putString("newPassword","");
+					editor.commit();
 					strDialog(R.string.confirm, R.string.password_change);
 					editText1.setText("");
 					editText2.setText("");
